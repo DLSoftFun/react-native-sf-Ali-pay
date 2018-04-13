@@ -1,0 +1,24 @@
+{
+    "name": "react-native-sf-Ali-pay",
+    "version": "1.0.0",
+    "description": "支付宝支付",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/DLSoftFun/react-native-sf-Ali-pay.git"
+    },
+    "keywords": [
+      "wx",
+      "pay",
+      "wechat"
+    ],
+    "author": "suifeng586",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/DLSoftFun/react-native-sf-Ali-pay/issues"
+    },
+    "homepage": "https://github.com/DLSoftFun/rreact-native-sf-Ali-pay#readme"
+  }

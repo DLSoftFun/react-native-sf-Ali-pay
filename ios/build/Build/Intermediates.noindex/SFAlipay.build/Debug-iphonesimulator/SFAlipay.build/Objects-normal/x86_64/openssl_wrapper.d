@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/Utils/openssl_wrapper.m \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/Utils/openssl_wrapper.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/rsa.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/asn1.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/e_os2.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/opensslconf.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/bio.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/crypto.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/stack.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/safestack.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/opensslv.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/ossl_typ.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/symhacks.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/bn.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/pem.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/evp.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/objects.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/obj_mac.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/x509.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/buffer.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/ec.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/ecdsa.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/ecdh.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/dsa.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/dh.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/sha.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/x509_vfy.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/lhash.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/pkcs7.h \
+  /Users/lzw/Desktop/SFAlipay/ios/SFAlipay/openssl/pem2.h
