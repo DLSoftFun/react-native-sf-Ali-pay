@@ -11,9 +11,9 @@
       "url": "https://github.com/DLSoftFun/react-native-sf-Ali-pay.git"
     },
     "keywords": [
-      "wx",
+      "alipay",
       "pay",
-      "wechat"
+      "reactNativePay"
     ],
     "author": "suifeng586",
     "license": "ISC",
