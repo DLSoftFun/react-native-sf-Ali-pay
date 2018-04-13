@@ -1,6 +1,6 @@
 {
-    "name": "react-native-sf-Ali-pay",
-    "version": "1.0.0",
+    "name": "react-native-sf-ali-pay",
+    "version": "1.0.1",
     "description": "支付宝支付",
     "main": "index.js",
     "scripts": {
@@ -8,7 +8,7 @@
     },
     "repository": {
       "type": "git",
-      "url": "https://github.com/DLSoftFun/react-native-sf-Ali-pay.git"
+      "url": "https://github.com/DLSoftFun/react-native-sf-ali-pay.git"
     },
     "keywords": [
       "alipay",
@@ -18,7 +18,7 @@
     "author": "suifeng586",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/DLSoftFun/react-native-sf-Ali-pay/issues"
+      "url": "https://github.com/DLSoftFun/react-native-sf-ali-pay/issues"
     },
-    "homepage": "https://github.com/DLSoftFun/rreact-native-sf-Ali-pay#readme"
+    "homepage": "https://github.com/DLSoftFun/react-native-sf-ali-pay#readme"
   }
