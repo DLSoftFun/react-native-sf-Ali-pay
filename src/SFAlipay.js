@@ -15,20 +15,15 @@ var SFPay = NativeModules.SFAlipay
  **/
 export default class SFAlipay extends React.Component{
     // 注册
-    static configure=(appid,partnerId,appScheme,seller_id)=>{
+    static configure=(appScheme)=>{
         SFPay.configure({
-            'appid':appid,
-            'partnerId':partnerId,
-            'appScheme':appScheme,
-            'seller_id':seller_id,
+            'appScheme':appScheme
         })
     }
     // 调取支付
-    static Pay=(subject,body,total_amount,callback)=>{
+    static Pay=(orderInfo,callback)=>{
         SFPay.pay({
-            'subject':subject,
-            'body':body,
-            'total_amount':total_amount
+            'orderInfo':orderInfo,
         },(error,events)=>{
             if(error){
                 console.error(error);
