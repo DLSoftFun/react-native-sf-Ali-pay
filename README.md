@@ -11,4 +11,4 @@
 * node_modules/react-native-sf-ali-pay/ios/SDK/AlipaySDK.bundle
 * node_modules/react-native-sf-ali-pay/ios/SDK/AlipaySDK.framework (此文件也会自动添加到Link Binary With Libraries里)
 * 在Build Settings中的Framework Search Paths中,增加:
-* $(SRCROOT)/../node_modules/react-native-sf-ali-pay/ios
+* $(SRCROOT)/../node_modules/react-native-sf-ali-pay/ios/SDK
