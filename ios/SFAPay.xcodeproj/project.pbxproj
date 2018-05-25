@@ -10,6 +10,7 @@
 		705356312080AD8300D9F4F7 /* SFAlipay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705356302080AD8300D9F4F7 /* SFAlipay.m */; };
 		705356362080ADA900D9F4F7 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705356322080ADA800D9F4F7 /* libssl.a */; };
 		705356372080ADA900D9F4F7 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705356332080ADA900D9F4F7 /* libcrypto.a */; };
+		70D383D020B800FD00430AF8 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D383CF20B800FD00430AF8 /* AlipaySDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +110,8 @@
 		705356872080ADCF00D9F4F7 /* APRSASigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APRSASigner.h; sourceTree = "<group>"; };
 		705356882080ADCF00D9F4F7 /* openssl_wrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
 		705356892080ADD000D9F4F7 /* APRSASigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APRSASigner.m; sourceTree = "<group>"; };
+		70D383CE20B800FD00430AF8 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AlipaySDK.bundle; path = SDK/AlipaySDK.bundle; sourceTree = "<group>"; };
+		70D383CF20B800FD00430AF8 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = SDK/AlipaySDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 			files = (
 				705356372080ADA900D9F4F7 /* libcrypto.a in Frameworks */,
 				705356362080ADA900D9F4F7 /* libssl.a in Frameworks */,
+				70D383D020B800FD00430AF8 /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +131,8 @@
 		7053561A2080AD4300D9F4F7 = {
 			isa = PBXGroup;
 			children = (
+				70D383CE20B800FD00430AF8 /* AlipaySDK.bundle */,
+				70D383CF20B800FD00430AF8 /* AlipaySDK.framework */,
 				705356852080ADCF00D9F4F7 /* Utils */,
 				705356392080ADCA00D9F4F7 /* openssl */,
 				705356332080ADA900D9F4F7 /* libcrypto.a */,
@@ -422,6 +428,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/SDK",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +449,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/SDK",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
