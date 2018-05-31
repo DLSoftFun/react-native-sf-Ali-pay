@@ -1,6 +1,6 @@
 {
     "name": "react-native-sf-ali-pay",
-    "version": "1.0.37",
+    "version": "1.0.38",
     "description": "支付宝支付",
     "main": "index.js",
     "scripts": {
