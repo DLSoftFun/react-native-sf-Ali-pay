@@ -14,31 +14,67 @@
 * 在Build Settings中的Framework Search Paths中,增加:
 * $(SRCROOT)/../node_modules/react-native-sf-ali-pay/ios/SDK
 ## Android 端
-* 1.0 将支付宝demo里面的alipaySdk-20160223.jar拷贝到我们工程的libs下，并添加到依赖中
-* 2.0 配置
+* 1.0 .将alipaySdk-xxxxxxxx.jar包放入商户应用工程的libs目录下
+* 1.1 进入商户应用工程的“Project Structure”，在app module下选择“File dependency”，将libs目录下的alipaySDK-xxxxxxxx.jar导入
+* 1.2 或者在app module下的build.gradle下手动添加依赖，如下代码所示：
+```
+dependencies {
+......
+compile files('libs/alipaySdk-20170725.jar')
+......
+}
+```
+* 2.0 修改Manifest
+* 2.1 在商户应用工程的AndroidManifest.xml文件里面添加声明：
 ```
 <!--权限-->
-
+<activity
+android:name="com.alipay.sdk.app.H5PayActivity"
+android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+android:exported="false"
+android:screenOrientation="behind"
+android:windowSoftInputMode="adjustResize|stateHidden" >
+</activity>
+<activity
+android:name="com.alipay.sdk.app.H5AuthActivity"
+android:configChanges="orientation|keyboardHidden|navigation"
+android:exported="false"
+android:screenOrientation="behind"
+android:windowSoftInputMode="adjustResize|stateHidden" >
+</activity>
+```
+* 2.11和权限声明
+```
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<!-- activity配置 -->
-
-<activity
-android:name="com.alipay.sdk.app.H5PayActivity"
-android:configChanges="orientation|keyboardHidden|navigation"
-android:exported="false"
-android:screenOrientation="behind">
-</activity>
-<activity
-android:name="com.alipay.sdk.auth.AuthActivity"
-android:configChanges="orientation|keyboardHidden|navigation"
-android:exported="false"
-android:screenOrientation="behind">
-</activity>
 ```
+* 3.0 添加混淆规则
+* 3.01 在商户应用工程的proguard-project.txt里添加以下相关规则：
+```
+-keep class com.alipay.android.app.IAlixPay{*;}
+-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+-keep class com.alipay.sdk.app.PayTask{ public *;}
+-keep class com.alipay.sdk.app.AuthTask{ public *;}
+-keep class com.alipay.sdk.app.H5PayCallback {
+<fields>;
+<methods>;
+}
+-keep class com.alipay.android.phone.mrpc.core.** { *; }
+-keep class com.alipay.apmobilesecuritysdk.** { *; }
+-keep class com.alipay.mobile.framework.service.annotation.** { *; }
+-keep class com.alipay.mobilesecuritysdk.face.** { *; }
+-keep class com.alipay.tscenter.biz.rpc.** { *; }
+-keep class org.json.alipay.** { *; }
+-keep class com.alipay.tscenter.** { *; }
+-keep class com.ta.utdid2.** { *;}
+-keep class com.ut.device.** { *;}
+```
+
 # Methods
 |  Methods  |  Params  |  Param Types  |   description  |  Example  |
 |:-----|:-----|:-----|:-----|:-----|
