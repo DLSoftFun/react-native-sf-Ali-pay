@@ -74,7 +74,62 @@ android:windowSoftInputMode="adjustResize|stateHidden" >
 -keep class com.ta.utdid2.** { *;}
 -keep class com.ut.device.** { *;}
 ```
-
+ ## IOS Appdelegate 添加监听
+ ```
+ // NOTE: 9.0以后使用新API接口
+ - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+ {
+ if ([url.host isEqualToString:@"safepay"]) {
+ // 支付跳转支付宝钱包进行支付，处理支付结果
+ [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+ //
+ NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",[[resultDic objectForKey:@"resultStatus"] intValue]],@"respCode",nil];
+ NSNotification *notification = [NSNotification notificationWithName:@"ORDER_PAY_NOTIFICATION" object:nil userInfo:dic];
+ [[NSNotificationCenter defaultCenter] postNotification:notification];
+ 
+ }];
+ }
+ return YES;
+ }
+ 
+ 
+ - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+ {
+ if ([url.host isEqualToString:@"safepay"]) {
+ // 支付跳转支付宝钱包进行支付，处理支付结果
+ [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+ NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",[[resultDic objectForKey:@"resultStatus"] intValue]],@"respCode",nil];
+ NSNotification *notification = [NSNotification notificationWithName:@"ORDER_PAY_NOTIFICATION" object:nil userInfo:dic];
+ [[NSNotificationCenter defaultCenter] postNotification:notification];
+ 
+ }];
+ 
+ }
+ return YES;
+ }
+ 
+ ```
+  ## react 添加监听方法
+  ```
+  import { NativeAppEventEmitter } from 'react-native';
+  NativeAppEventEmitter.addListener(
+  'AliResp',
+  (content) => {
+  //数据内容
+  }
+  }
+  );
+  this.listener && this.listener.remove();
+  
+  回调中errCode值列表：
+  
+  名称       描述
+ 9000       成功
+ 6001       中途退出
+ 6002       网络连接错误
+ 4000       支付订单失败
+  
+ ```
 # Methods
 |  Methods  |  Params  |  Param Types  |   description  |  Example  |
 |:-----|:-----|:-----|:-----|:-----|

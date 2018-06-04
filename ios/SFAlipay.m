@@ -16,12 +16,29 @@ RCT_EXPORT_MODULE();
 
 - (instancetype)init{
   if (self = [super init]) {
-   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payScuss) name:@"payScuss" object:nil];
+   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payScuss) name:@"ORDER_PAY_NOTIFICATION" object:nil];
   }
   return self;
 }
--(void)payScuss{
-  _callback(@[[NSNull null],@"1"]);
+-(void)payScuss:(NSNotification *)notification{
+    
+    if ([notification.userInfo[@"respCode"]integerValue]==9000) {
+        NSLog(@"支付成功");
+        [self.bridge.eventDispatcher sendAppEventWithName:@"AliResp"
+                                                     body:@{@"errCode ": @"支付成功",@"errMessage": @"9000"}];
+    }else if([notification.userInfo[@"respCode"]integerValue]==6001){
+        NSLog(@"用户中途取消");
+        [self.bridge.eventDispatcher sendAppEventWithName:@"AliResp"
+                                                     body:@{@"errCode ": @"用户中途取消",@"errMessage": @"6001"}];
+    }else if([notification.userInfo[@"respCode"]integerValue]==6002){
+        NSLog(@"网络连接出错");
+        [self.bridge.eventDispatcher sendAppEventWithName:@"AliResp"
+                                                     body:@{@"errCode ": @"网络连接错误",@"errMessage": @"6002"}];
+    }else if([notification.userInfo[@"respCode"]integerValue]==4000){
+        NSLog(@"支付订单失败");
+        [self.bridge.eventDispatcher sendAppEventWithName:@"AliResp"
+                                                     body:@{@"errCode ": @"支付订单失败",@"errMessage": @"4000"}];
+    }
 }
 RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
   self.appScheme = [dic objectForKey:@"appScheme"];
