@@ -122,7 +122,7 @@ android:windowSoftInputMode="adjustResize|stateHidden" >
   this.listener && this.listener.remove();
   
   回调中errCode值列表：
-  
+ errCode     errMessage
   名称       描述
  9000       成功
  6001       中途退出

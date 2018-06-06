@@ -55,20 +55,4 @@ RCT_EXPORT_METHOD(pay:(NSDictionary *)property{
 
   
 
-#pragma mark   ==============产生随机订单号==============
-
-- (NSString *)generateTradeNO
-{
-    static int kNumber = 15;
-    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    NSMutableString *resultStr = [[NSMutableString alloc] init];
-    srand((unsigned)time(0));
-    for (int i = 0; i < kNumber; i++)
-    {
-        unsigned index = rand() % [sourceStr length];
-        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
-        [resultStr appendString:oneStr];
-    }
-    return resultStr;
-}
 @end

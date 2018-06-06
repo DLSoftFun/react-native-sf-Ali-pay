@@ -1,19 +1,20 @@
 package com.sf.react_native_sf_alipay;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
-import com.sf.react_native_sf_alipay.util.OrderInfoUtil2_0;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import java.util.Map;
 
@@ -23,7 +24,7 @@ import java.util.Map;
  */
 
 public class AliModule extends ReactContextBaseJavaModule {
-    public static String APPID = "";
+    private static String APPID = "";
     public static String RSA2_PRIVATE = "";
     public static String RSA_PRIVATE = "";
     private static final int SDK_PAY_FLAG = 1;
@@ -40,8 +41,9 @@ public class AliModule extends ReactContextBaseJavaModule {
     public void registerApp(String appid) {
         this.APPID = appid;
     }
+    @SuppressLint("HandlerLeak")
     @ReactMethod
-    public void pay(ReadableMap data, final Callback callback){
+    public void pay(ReadableMap data){
 //        if(data.hasKey("rsa_private")){
 //            RSA_PRIVATE = data.getString("rsa_private");
 //        }
@@ -104,11 +106,50 @@ public class AliModule extends ReactContextBaseJavaModule {
                         if (TextUtils.equals(resultStatus, "9000")) {
                             // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
                             Toast.makeText(getReactApplicationContext(), "支付成功", Toast.LENGTH_SHORT).show();
-                            callback.invoke(0);
-                        } else {
+                            WritableMap map = Arguments.createMap();
+                            map.putInt("errCode", 9000);
+                            map.putString("errMessage", "支付成功");
+                            getReactApplicationContext()
+                                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                                    .emit("AliResp", map);
+                        } else if(TextUtils.equals(resultStatus, "6001")){
                             // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
+                            Toast.makeText(getReactApplicationContext(), "用户中途取消", Toast.LENGTH_SHORT).show();
+                            WritableMap map = Arguments.createMap();
+                            map.putInt("errCode", 6001);
+                            map.putString("errMessage", "用户中途取消");
+                            getReactApplicationContext()
+                                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                                    .emit("AliResp", map);
+
+                        }else if(TextUtils.equals(resultStatus, "6002")){
+                            // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
+                            Toast.makeText(getReactApplicationContext(), "网络连接错误", Toast.LENGTH_SHORT).show();
+                            WritableMap map = Arguments.createMap();
+                            map.putInt("errCode", 6002);
+                            map.putString("errMessage", "网络连接错误");
+                            getReactApplicationContext()
+                                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                                    .emit("AliResp", map);
+
+                        }else if(TextUtils.equals(resultStatus, "4000")){
+                            // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
+                            Toast.makeText(getReactApplicationContext(), "支付订单失败", Toast.LENGTH_SHORT).show();
+                            WritableMap map = Arguments.createMap();
+                            map.putInt("errCode", 4000);
+                            map.putString("errMessage", "支付订单失败");
+                            getReactApplicationContext()
+                                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                                    .emit("AliResp", map);
+                        }else{
                             Toast.makeText(getReactApplicationContext(), "支付失败", Toast.LENGTH_SHORT).show();
-                            callback.invoke(-100);
+                            WritableMap map = Arguments.createMap();
+                            map.putInt("errCode", -100);
+                            map.putString("errMessage", "支付失败");
+                            getReactApplicationContext()
+                                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                                    .emit("AliResp", map);
+
                         }
                         break;
                     }
