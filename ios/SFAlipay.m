@@ -16,11 +16,11 @@ RCT_EXPORT_MODULE();
 
 - (instancetype)init{
   if (self = [super init]) {
-      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payuccess:) name:@"ORDER_AlIPAY" object:nil];
+      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(paySuccess:) name:@"PAY_AlIPAY" object:nil];
   }
   return self;
 }
--(void)payScuss:(NSNotification *)notification{
+-(void)paySuccess:(NSNotification *)notification{
     if ([notification.userInfo[@"respCode"]integerValue]==9000) {
         NSLog(@"支付成功");
         [self.bridge.eventDispatcher sendAppEventWithName:@"AliResp"

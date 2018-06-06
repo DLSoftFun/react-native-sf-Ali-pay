@@ -84,7 +84,7 @@ android:windowSoftInputMode="adjustResize|stateHidden" >
  [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
  //
  NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",[[resultDic objectForKey:@"resultStatus"] intValue]],@"respCode",nil];
- NSNotification *notification = [NSNotification notificationWithName:@"ORDER_PAY_NOTIFICATION" object:nil userInfo:dic];
+ NSNotification *notification = [NSNotification notificationWithName:@"PAY_AlIPAY" object:nil userInfo:dic];
  [[NSNotificationCenter defaultCenter] postNotification:notification];
  
  }];
@@ -99,7 +99,7 @@ android:windowSoftInputMode="adjustResize|stateHidden" >
  // 支付跳转支付宝钱包进行支付，处理支付结果
  [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
  NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:[NSString stringWithFormat:@"%d",[[resultDic objectForKey:@"resultStatus"] intValue]],@"respCode",nil];
- NSNotification *notification = [NSNotification notificationWithName:@"ORDER_AlIPAY" object:nil userInfo:dic];
+ NSNotification *notification = [NSNotification notificationWithName:@"PAY_AlIPAY" object:nil userInfo:dic];
  [[NSNotificationCenter defaultCenter] postNotification:notification];
  
  }];
