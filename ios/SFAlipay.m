@@ -16,7 +16,7 @@ RCT_EXPORT_MODULE();
 
 - (instancetype)init{
   if (self = [super init]) {
-   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payScuss) name:@"ORDER_PAY_NOTIFICATION" object:nil];
+      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(payuccess:) name:@"ORDER_AlIPAY" object:nil];
   }
   return self;
 }
@@ -45,8 +45,7 @@ RCT_EXPORT_METHOD(registerApp:(NSDictionary*)dic){
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-RCT_EXPORT_METHOD(pay:(NSDictionary *)property{
-    _callback = callback;
+RCT_EXPORT_METHOD(pay:(NSDictionary *)property){
         // NOTE: 调用支付结果开始支付
         [[AlipaySDK defaultService] payOrder:[property objectForKey:@"orderInfo"] fromScheme:self.appScheme callback:^(NSDictionary *resultDic) {
             NSLog(@"reslut = %@",resultDic);

@@ -11,6 +11,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 @interface SFAlipay : NSObject<RCTBridgeModule>
 @property (nonatomic,strong) RCTResponseSenderBlock callback;
 @property (nonatomic,strong) NSString *app_id;
