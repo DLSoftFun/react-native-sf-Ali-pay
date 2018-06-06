@@ -134,4 +134,4 @@ android:windowSoftInputMode="adjustResize|stateHidden" >
 |  Methods  |  Params  |  Param Types  |   description  |  Example  |
 |:-----|:-----|:-----|:-----|:-----|
 |registerApp|string|string|支付宝IOS白名单|SFAlipay.registerApp('IOS白名单标识')|
-|Pay|dictionary|dictionary|需要传递的参数|SFAlipay.Pay('服务端获取支付字符串',()=>{'支付成功回调'})|
+|Pay|string|string|需要传递的参数|SFAlipay.Pay('服务端获取支付字符串',()=>{'支付成功回调'})|
