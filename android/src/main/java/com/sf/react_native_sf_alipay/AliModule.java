@@ -35,11 +35,11 @@ public class AliModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "SFAliPay";
+        return "SFAlipay";
     }
     @ReactMethod
-    public void registerApp(String appid) {
-        this.APPID = appid;
+    public void registerApp(ReadableMap appid) {
+
     }
     @SuppressLint("HandlerLeak")
     @ReactMethod
