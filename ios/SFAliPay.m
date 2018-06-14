@@ -6,11 +6,11 @@
 //  Copyright © 2018年 LZW. All rights reserved.
 //
 
-#import "SFAlipay.h"
+#import "SFAliPay.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "APRSASigner.h"
 
-@implementation SFAlipay
+@implementation SFAliPay
 @synthesize bridge = _bridge;
 RCT_EXPORT_MODULE();
 

@@ -35,7 +35,7 @@ public class AliModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "SFAlipay";
+        return "SFAliPay";
     }
     @ReactMethod
     public void registerApp(ReadableMap appid) {

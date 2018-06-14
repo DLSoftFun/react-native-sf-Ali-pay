@@ -12,7 +12,7 @@
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
-@interface SFAlipay : NSObject<RCTBridgeModule>
+@interface SFAliPay : NSObject<RCTBridgeModule>
 @property (nonatomic,strong) RCTResponseSenderBlock callback;
 @property (nonatomic,strong) NSString *app_id;
 @property (nonatomic,strong) NSString *rsaPrivateKey;

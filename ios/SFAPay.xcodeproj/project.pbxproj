@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		705356312080AD8300D9F4F7 /* SFAlipay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705356302080AD8300D9F4F7 /* SFAlipay.m */; };
+		705356312080AD8300D9F4F7 /* SFAliPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 705356302080AD8300D9F4F7 /* SFAliPay.m */; };
 		705356362080ADA900D9F4F7 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705356322080ADA800D9F4F7 /* libssl.a */; };
 		705356372080ADA900D9F4F7 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705356332080ADA900D9F4F7 /* libcrypto.a */; };
 		70D3848620B8063300430AF8 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D3848520B8063300430AF8 /* AlipaySDK.framework */; };
@@ -27,8 +27,8 @@
 
 /* Begin PBXFileReference section */
 		705356232080AD4300D9F4F7 /* libSFAPay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSFAPay.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7053562F2080AD8300D9F4F7 /* SFAlipay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAlipay.h; sourceTree = "<group>"; };
-		705356302080AD8300D9F4F7 /* SFAlipay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAlipay.m; sourceTree = "<group>"; };
+		7053562F2080AD8300D9F4F7 /* SFAliPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAliPay.h; sourceTree = "<group>"; };
+		705356302080AD8300D9F4F7 /* SFAliPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAliPay.m; sourceTree = "<group>"; };
 		705356322080ADA800D9F4F7 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
 		705356332080ADA900D9F4F7 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 		7053563A2080ADCA00D9F4F7 /* pem2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pem2.h; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 				705356392080ADCA00D9F4F7 /* openssl */,
 				705356332080ADA900D9F4F7 /* libcrypto.a */,
 				705356322080ADA800D9F4F7 /* libssl.a */,
-				7053562F2080AD8300D9F4F7 /* SFAlipay.h */,
-				705356302080AD8300D9F4F7 /* SFAlipay.m */,
+				7053562F2080AD8300D9F4F7 /* SFAliPay.h */,
+				705356302080AD8300D9F4F7 /* SFAliPay.m */,
 				705356242080AD4300D9F4F7 /* Products */,
 				7053568A2080AE3100D9F4F7 /* Frameworks */,
 			);
@@ -309,7 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				705356312080AD8300D9F4F7 /* SFAlipay.m in Sources */,
+				705356312080AD8300D9F4F7 /* SFAliPay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
